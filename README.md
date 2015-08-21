@@ -35,8 +35,15 @@ class User < ActiveRecord::Base
   deprecate_column "my_old_column"
 end
 
-User.new.my_old_column # => raises NoMethodError
+User.new.my_old_column # => nil
 ```
+
+Optional named parameters are `with_block:` and `fallback:`.
+
+- `with_block` accepts a `Proc` object that is called whenever you try to access the deprecated column
+- `fallback` is a message to send to the AR object when it receives the deprecated column name.
+
+For instance, you can fall back to a different column, but use the block to log a deprecation warning.
 
 ## Development
 
