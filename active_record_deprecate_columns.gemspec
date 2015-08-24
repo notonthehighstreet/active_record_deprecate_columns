@@ -6,8 +6,8 @@ require 'active_record_deprecate_columns/version'
 Gem::Specification.new do |spec|
   spec.name          = "active_record_deprecate_columns"
   spec.version       = ActiveRecordDeprecateColumns::VERSION
-  spec.authors       = ["James Hunt"]
-  spec.email         = ["jameshunt@notonthehighstreet.com"]
+  spec.authors       = ["James Hunt", "Alex Sunderland"]
+  spec.email         = ["alexsunderland@notonthehighstreet.com"]
 
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
