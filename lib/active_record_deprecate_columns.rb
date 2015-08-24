@@ -1,13 +1,14 @@
 require "active_record_deprecate_columns/version"
 
 # To send a notification by default when a deprecated column is accessed, do something like this:
+#
 # class ActiveRecord::Base
-#   block = lambda do |object, column|
+#   @@default_block = Proc.new {|object, column|
 #     Services.for(:error_notification).notify(
 #       "OH NO SOMEONE CALLED #{column} from #{caller.join("\n")}"
 #     )
-#   end
-#   def self.deprecate_column(column_name, with_block: block, fallback: nil)
+#   }
+#   def self.deprecate_column(column_name, with_block: @@default_block, fallback: nil)
 #     super
 #   end
 # end
