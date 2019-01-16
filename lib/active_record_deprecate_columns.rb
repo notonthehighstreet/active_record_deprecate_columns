@@ -15,7 +15,7 @@ require "active_record_deprecate_columns/version"
 
 module ActiveRecordDeprecateColumns
   def deprecate_column(column_name, with_block: nil, fallback: nil)
-    raise "You can only deprecate columns on the superclass" if self.superclass != ActiveRecord::Base
+    raise "You can only deprecate columns on the superclass" unless (self.superclass == ActiveRecord::Base || self.superclass == ApplicationRecord)
 
     deprecated_columns << column_name.to_s
 
