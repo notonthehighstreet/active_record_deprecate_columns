@@ -1,7 +1,10 @@
-class BrandNewObject < ActiveRecord::Base
+class ApplicationRecord < ActiveRecord::Base;
+  self.abstract_class = true
 end
 
-class User < ActiveRecord::Base
+class BrandNewObject < ApplicationRecord; end
+
+class User < ApplicationRecord
   attr_accessor :attribute
   deprecate_column :nothing
   deprecate_column :old_name, with_block: Proc.new { raise NoMethodError }
@@ -10,6 +13,6 @@ class User < ActiveRecord::Base
   deprecate_column :with_block_and_fallback, with_block: Proc.new {|object| object.attribute = "SET" }, fallback: :attribute
 end
 
-class Vehicle < ActiveRecord::Base
+class Vehicle < ApplicationRecord
   deprecate_column :not_used, with_block: Proc.new { raise NoMethodError }
 end
