@@ -1,6 +1,8 @@
 # ActiveRecordDeprecateColumns
 
 [![Build Status](https://travis-ci.org/notonthehighstreet/active_record_deprecate_columns.svg?branch=master)](https://travis-ci.org/notonthehighstreet/active_record_deprecate_columns)
+[![Depfu](https://badges.depfu.com/badges/cd0479da3674d517a19d67b4e19e661f/overview.svg)](https://depfu.com/github/notonthehighstreet/active_record_deprecate_columns?project_id=5010)
+[![Depfu](https://badges.depfu.com/badges/cd0479da3674d517a19d67b4e19e661f/count.svg)](https://depfu.com/github/notonthehighstreet/active_record_deprecate_columns?project_id=5010)
 
 An ActiveRecord extension gem that allows you to deprecate columns before you
 delete them. This will allow you to double-check that a column definitely isn't
