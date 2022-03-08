@@ -1,12 +1,19 @@
 # ActiveRecordDeprecateColumns
 
-[![Build Status](https://app.travis-ci.com/notonthehighstreet/active_record_deprecate_columns.svg?branch=main)](https://app.travis-ci.com/notonthehighstreet/active_record_deprecate_columns)
-[![Depfu](https://badges.depfu.com/badges/cd0479da3674d517a19d67b4e19e661f/overview.svg)](https://depfu.com/github/notonthehighstreet/active_record_deprecate_columns?project_id=5010)
-[![Depfu](https://badges.depfu.com/badges/cd0479da3674d517a19d67b4e19e661f/count.svg)](https://depfu.com/github/notonthehighstreet/active_record_deprecate_columns?project_id=5010)
-
 An ActiveRecord extension gem that allows you to deprecate columns before you
 delete them. This will allow you to double-check that a column definitely isn't
 in use before it's gone. The deprecated columns won't appear in `#to_json` calls.
+
+## Deprecation Warning
+
+This gem should only be used with Rails 4 and below.
+
+The functionality that this gem offers is now available in Rails 5+. 
+```
+class User < ApplicationRecord
+  self.ignored_columns = %w(employee_email)
+end
+```
 
 ## Installation
 
